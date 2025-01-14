@@ -4,9 +4,9 @@ import java.io.*;
 public class ConcatenateFiles {
 
     public static void main(String[] args) {
-        String file1 = "/workspaces/fabioevtc/App Concatenar Java/file1.txt";
-        String file2 = "/workspaces/fabioevtc/App Concatenar Java/file2.txt";
-        String outputFile = "/workspaces/fabioevtc/App Concatenar Java/Output.txt";
+        String file1 = "file1.txt";
+        String file2 = "file2.txt";
+        String outputFile = "Output.txt";
 
         File f1 = new File(file1);
         File f2 = new File(file2);

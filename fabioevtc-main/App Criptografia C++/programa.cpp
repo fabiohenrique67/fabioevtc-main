@@ -84,25 +84,6 @@ int main() {
     generate_random_key(key2, 8);
     generate_random_key(key3, 8);
 
-    // Exibir as chaves geradas em hexadecimal
-    cout << "Key1: ";
-    for (unsigned char k : key1) {
-        cout << hex << setw(2) << setfill('0') << (int)k;
-    }
-    cout << endl;
-
-    cout << "Key2: ";
-    for (unsigned char k : key2) {
-        cout << hex << setw(2) << setfill('0') << (int)k;
-    }
-    cout << endl;
-
-    cout << "Key3: ";
-    for (unsigned char k : key3) {
-        cout << hex << setw(2) << setfill('0') << (int)k;
-    }
-    cout << endl;
-
     // Converter o texto plano para um vetor de bytes
     vector<unsigned char> plaintext_bytes(plaintext.begin(), plaintext.end());
     vector<unsigned char> ciphertext;

@@ -3,9 +3,9 @@
 #include <string>
 
 int main() {
-    std::ifstream file1("/workspaces/fabioevtc/App Concatenar C++/file1.txt");
-    std::ifstream file2("/workspaces/fabioevtc/App Concatenar C++/file2.txt");
-    std::ofstream outputFile("/workspaces/fabioevtc/App Concatenar C++/OutputFile.txt");
+    std::ifstream file1("file1.txt");
+    std::ifstream file2("file2.txt");
+    std::ofstream outputFile("OutputFile.txt");
 
     if (!file1.is_open() || !file2.is_open() || !outputFile.is_open()) {
         std::cerr << "Failed to open one or more files." << std::endl;

@@ -22,10 +22,14 @@ public class TripleDESExample {
             SecretKey secretKey = keyGen.generateKey();
             byte[] key = secretKey.getEncoded();
 
+            //System.out.println("Generated Key (Base64): " + Base64.getEncoder().encodeToString(key));
+
             Cipher cipher = Cipher.getInstance("DESede/CBC/PKCS5Padding");
             byte[] iv = new byte[8];
             System.arraycopy(key, 0, iv, 0, iv.length);
             IvParameterSpec ivSpec = new IvParameterSpec(iv);
+
+           // System.out.println("Generated IV (Base64): " + Base64.getEncoder().encodeToString(iv));
 
             cipher.init(Cipher.ENCRYPT_MODE, new SecretKeySpec(key, "DESede"), ivSpec);
             byte[] encrypted = cipher.doFinal(plaintext.getBytes());

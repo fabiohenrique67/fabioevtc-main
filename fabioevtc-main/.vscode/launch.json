@@ -2,6 +2,20 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "ConcatenateFiles",
+      "request": "launch",
+      "mainClass": "ConcatenateFiles",
+      "projectName": "fabioevtc-main_506032dc"
+    },
+    {
+      "type": "java",
+      "name": "TripleDESExample",
+      "request": "launch",
+      "mainClass": "TripleDESExample",
+      "projectName": "fabioevtc-main_506032dc"
+    },
+    {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
