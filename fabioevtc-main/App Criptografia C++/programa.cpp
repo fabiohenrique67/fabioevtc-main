@@ -7,7 +7,6 @@
 
 using namespace std;
 
-// Função para simular a operação DES (de forma simplificada)
 void DES_encrypt_block(const unsigned char* input, unsigned char* output, const unsigned char* key) {
     for (int i = 0; i < 8; ++i) {
         output[i] = input[i] ^ key[i % 8];
@@ -20,7 +19,6 @@ void DES_decrypt_block(const unsigned char* input, unsigned char* output, const 
     }
 }
 
-// Função para realizar o 3DES (Triple DES)
 void TripleDES_encrypt(const vector<unsigned char>& plaintext, vector<unsigned char>& ciphertext,
     const unsigned char* key1, const unsigned char* key2, const unsigned char* key3) {
     size_t block_size = 8; 
@@ -66,43 +64,42 @@ void TripleDES_decrypt(const vector<unsigned char>& ciphertext, vector<unsigned 
     }
 }
 
-// Função para gerar chaves aleatórias
 void generate_random_key(unsigned char* key, size_t size) {
     for (size_t i = 0; i < size; ++i) {
-        key[i] = rand() % 256; // Gera um byte aleatório (0-255)
+        key[i] = rand() % 256; 
     }
 }
 
 int main() {
-    srand(static_cast<unsigned int>(time(nullptr))); // Inicializa o gerador de números aleatórios
+    srand(static_cast<unsigned int>(time(nullptr))); 
 
     string plaintext = "Evertec simplificando o mercado de pagamentos";
     unsigned char key1[8], key2[8], key3[8];
 
-    // Gerar chaves aleatórias
+
     generate_random_key(key1, 8);
     generate_random_key(key2, 8);
     generate_random_key(key3, 8);
 
-    // Converter o texto plano para um vetor de bytes
+
     vector<unsigned char> plaintext_bytes(plaintext.begin(), plaintext.end());
     vector<unsigned char> ciphertext;
     vector<unsigned char> decryptedtext;
 
-    // Criptografar
+
     TripleDES_encrypt(plaintext_bytes, ciphertext, key1, key2, key3);
 
-    // Exibir o texto cifrado em hexadecimal
+
     cout << "Ciphertext (hex): ";
     for (unsigned char c : ciphertext) {
         cout << hex << setw(2) << setfill('0') << (int)c;
     }
     cout << endl;
 
-    // Descriptografar
+
     TripleDES_decrypt(ciphertext, decryptedtext, key1, key2, key3);
 
-    // Converter o vetor de bytes de volta para string
+
     string decrypted_string(decryptedtext.begin(), decryptedtext.end());
     cout << "Decrypted text: " << decrypted_string << endl;
 
